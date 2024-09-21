@@ -1,0 +1,131 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+    transform: scale(1);
+    animation: bounceIn 0.6s ease-out;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.header {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px;
+    border-radius: 15px 15px 0 0;
+}
+
+.header h1 {
+    margin: 0;
+    animation: rainbow-text 2s infinite;
+}
+
+@keyframes rainbow-text {
+    0% { color: #ff0000; }
+    20% { color: #ff7f00; }
+    40% { color: #ffff00; }
+    60% { color: #00ff00; }
+    80% { color: #0000ff; }
+    100% { color: #8b00ff; }
+}
+
+#revealButton {
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #333;
+    font-weight: bold;
+    border: 2px solid #ff6f61;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+#revealButton:hover {
+    background-color: #ff6f61;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.hidden {
+    display: none;
+}
+
+#message {
+    margin-top: 20px;
+}
+
+.footer {
+    background-color: #fafafa;
+    padding: 10px;
+    border-radius: 0 0 15px 15px;
+}
+
+/* Confetti */
+.confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: hsl(200, 100%, 50%);
+    opacity: 0.7;
+    animation: fall 4s infinite linear;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* Cake animation */
+.cake {
+    font-size: 0;
+    transition: font-size 0.8s ease;
+    margin-top: 20px;
+}
+
+.cake.hidden {
+    font-size: 0;
+}
+
+.cake.grow {
+    font-size: 5rem;
+}
